@@ -7,23 +7,26 @@
     <%= button_to "Create Email", {controller: "emails", action: "create"}, class: "btn btn-success btn-block", method: "POST", remote: true %>
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-inbox"></i> Inbox <span class="badge badge-danger"><%=@emails.length%></span></a>
+        <a class="nav-link" href="#"><i class="fa fa-inbox"></i> <span class="badge badge-danger"><%=@emails.count%></span></a>
       </li>
-      <%@emails.each do |email|%>
-        <li class='nav-item' id="<%=email.id%>">
-          <%if email.status == true%>
-            <%= link_to email_path(email.id), method: :get, class: '', remote: :true do %>
-              <p class="nav-link" style="color: green" id="stat-<%=email.id%>"> <%=email.object%></p>
+      <%if @emails.count != 0%>
+        <%@emails.each do |email|%>
+          <li class='nav-item' id="<%=email.id%>">
+            <%if email.status == true%>
+              <%= link_to email_path(email.id), method: :get, class: '', remote: :true do %>
+                <p class="nav-link" style="color: green" id="stat-<%=email.id%>"> <%=email.object%></p>
+              <%end%>
+            <%else%>
+              <%= link_to email_path(email.id), method: :get, class: '', remote: :true do %>
+                <p class="nav-link" id="stat-<%=email.id%>"> <%=email.object%></p>
+              </li>
             <%end%>
-          <%else%>
-            <%= link_to email_path(email.id), method: :get, class: '', remote: :true do %>
-              <p class="nav-link" id="stat-<%=email.id%>"> <%=email.object%></p>
-            </li>
           <%end%>
         <%end%>
+      <%else%>
       <%end%>
     </ul>
   </nav>
-  <%= render 'show'%>
+  <%=render 'show'%>
 </div>
-<script src="https://kit.fontawesome.com/8f239ccbef.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/19b1f3be7b.js" crossorigin="anonymous"></script>
