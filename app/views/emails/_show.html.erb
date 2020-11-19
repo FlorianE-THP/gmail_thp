@@ -3,10 +3,10 @@
     <div class="details" id="test">
       <div class="title"><%=@email.object%></div>
       <div class="header">
-        <img class="avatar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+        <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/647px-Apple_logo_black.svg.png" style="background-size : cover; width: 40px; height: 50px">
         <div class="from">
-          <span>Chris</span>
-          chris@yopmail.com
+          <span>Flo</span>
+          flo@apple.com
         </div>
         <div class="date">Today, <b>3:47 PM</b></div>
       </div>
@@ -16,7 +16,7 @@
         </p>
       </div>
     </div>
-    <div class="form-group" style="width: 200px; display: inline-flex; justify-content: center; align-items: center">
+    <div class="form-group" style="width: 200px; display: inline-flex; justify-content: center; align-items: center;">
       <%= link_to "Supprimer", email_path(@email.id), class: "btn btn-danger btn-block", method: :delete, remote: true %>
       <%= button_to "Non lus",@email, class: "btn btn-secondary btn-block", method: :put, remote: true%>
     </div>

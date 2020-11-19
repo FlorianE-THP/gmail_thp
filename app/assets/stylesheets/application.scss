@@ -6,6 +6,7 @@
 @import "components/*";
 
 
+
 .task-true {
     text-decoration: line-through;
 } 
@@ -105,7 +106,7 @@ body{margin-top:20px;}
 
 .email-app .inbox .message .actions .action {
     width: 2rem;
-    margin-bottom: 0.5rem;
+
     color: #c0cadd;
     text-align: center;
 }
@@ -134,7 +135,7 @@ body{margin-top:20px;}
 }
 
 .email-app .inbox .message .title {
-    margin-bottom: 0.5rem;
+
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -145,7 +146,7 @@ body{margin-top:20px;}
 }
 
 .email-app .message .toolbar {
-    padding-bottom: 1rem;
+
     border-bottom: 1px solid #e1e6ef;
 }
 
@@ -157,7 +158,7 @@ body{margin-top:20px;}
 .email-app .message .details .header {
     display: flex;
     padding: 1rem 0;
-    margin: 1rem 0;
+    margin:  0;
     border-top: 1px solid #e1e6ef;
     border-bottom: 1px solid #e1e6ef;
 }
@@ -229,3 +230,11 @@ body{margin-top:20px;}
         flex: 0 0 100%;
     }
 }
+
+.nav-link {
+    margin: 0px, 0px, 0px;
+    margin-bottom: 0px;
+}
+
+
+

@@ -13,11 +13,11 @@
         <%@emails.each do |email|%>
           <li class='nav-item' id="<%=email.id%>">
             <%if email.status == true%>
-              <%= link_to email_path(email.id), method: :get, class: '', remote: :true do %>
+              <%= link_to email_path(email.id), method: :get, class: 'coucou', remote: :true do %>
                 <p class="nav-link" style="color: green" id="stat-<%=email.id%>"> <%=email.object%></p>
               <%end%>
             <%else%>
-              <%= link_to email_path(email.id), method: :get, class: '', remote: :true do %>
+              <%= link_to email_path(email.id), method: :get, class: 'coucou', remote: :true do %>
                 <p class="nav-link" id="stat-<%=email.id%>"> <%=email.object%></p>
               </li>
             <%end%>
