@@ -1,0 +1,40 @@
+<h1 class="text-center mb-4">Welcome to my todolist app</h1>
+<%= render 'layouts/task_form'  %>
+<div class="container" id="catcontainer">
+  <ul>
+    <% @categories.each do  |category|%>
+      <li class="liid"><%= category.title  %></li>
+      <div class="card">
+        <ul class="cardass">
+          <% category.tasks.each do |task|  %>
+            <li id="test-<%=task.id%>">
+              <% if task.status == true%>
+                <span class="task-true"><%= task.title%></span>
+              <% else %>
+                <span class=""><%= task.title%></span>
+              <%end%>
+              <% unless task.deadline.nil? %>
+                , to read: <%= task.deadline.strftime('%D')  %>
+              <% end %>
+              <%= check_box_tag :status, true, task.status , data: { remote: true, url: task_path(task.id), params: { id: task.id, status: !task.status }.to_param, method: "put" }%>
+              <%= link_to task_path(task), method: :delete, remote: true do%><i class="fas fa-trash-alt"></i><% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </ul>
+</div>
+<div class="container">
+  <div class="row">
+    <% @tasks.each do |task|  %>
+      <div class="card col-3">
+        <% unless task.image.nil? %>
+          <%= image_tag task.image, class: "rounded-circle" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/19b1f3be7b.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>

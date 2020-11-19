@@ -1,0 +1,6 @@
+<li id="<%= @task.id%>">
+  <%= task.title  %>
+  <% unless task.deadline.nil? %>
+    , to read: <%= task.deadline.strftime('%D')  %>
+  <% end %>
+</li>

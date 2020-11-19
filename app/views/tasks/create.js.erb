@@ -1,0 +1,7 @@
+var lol = document.getElementById("catcontainer");
+var liid = document.getElementsByClassName('liid')
+for (var i = 0; i < liid.length; i++) {
+  if("<%=@task.category.title%>" === liid[i].innerText){
+document.getElementsByClassName("cardass")[i].insertAdjacentHTML("beforeend", "<%= j render 'task', task: @task %>")
+  }
+  }
